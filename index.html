@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>For Rekcal</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #E0A4B0;
+      font-family: 'Montserrat', sans-serif;
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: 700;
+      color: #8B0000;
+      letter-spacing: 2px;
+      max-width: 800px;
+      line-height: 1.4;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 300;
+      color: #8B0000;
+      letter-spacing: 3px;
+      margin-top: 25px;
+    }
+
+    .heart {
+      position: fixed;
+      top: -10px;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>
+    anh đi làm nhớ ăn uống đầy đủ nha,<br>
+    em yeu anh ❤️
+  </h1>
+
+  <h2>from Mymeo to Rekcal</h2>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      heart.style.fontSize = (Math.random() * 25 + 15) + "px";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 150);
+
+    setTimeout(() => {
+      alert("em nho anh ❤️");
+    }, 2500);
+  </script>
+
+</body>
+</html>
